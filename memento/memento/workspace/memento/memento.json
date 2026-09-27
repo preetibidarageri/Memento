@@ -49,14 +49,28 @@
    "number_card_name": "Total Tasks"
   }
  ],
+ "modified": "2026-09-20 02:07:00.756318",
+ "modified_by": "Administrator",
+ "module": "Memento",
+ "name": "Memento",
+ "number_cards": [],
  "owner": "Administrator",
  "parent_page": "",
  "public": 1,
  "quick_lists": [
   {
-   "document_type": "Tasks",
-   "label": "Recent Tasks",
-   "quick_list_filter": "[]"
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Tasking",
+   "link_to": "day-to-day-v3",
+   "type": "Page"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Settings",
+   "link_to": "Memento Settings",
+   "type": "DocType"
   }
  ],
  "roles": [],
