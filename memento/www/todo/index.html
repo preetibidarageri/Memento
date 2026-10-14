@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<script>
+    window.csrf_token = "{{ csrf_token }}";
+    console.log("CSRF TOKEN:", window.csrf_token);
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#062e3f">
+
+<meta
+name="Description"
+content="A dynamic and aesthetic To-Do List WebApp with Project and Task support."
+
+>
+
+<!-- Google Fonts -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+    crossorigin
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Dynalight&family=Work+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+>
+
+<!-- Font Awesome -->
+
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+    integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o="
+    crossorigin="anonymous"
+>
+
+<!-- CSS -->
+
+<link
+    rel="stylesheet"
+    href="/todo/CSS/main.css"
+>
+
+<link
+    rel="stylesheet"
+    href="/todo/CSS/corner.css"
+>
+
+<title>JUST DO IT</title>
+
+</head>
+
+<body class="standard">
+
+<!-- =====================================================
+     HEADER
+====================================================== -->
+
+<div id="header">
+
+<!-- Theme Selectors -->
+
+<div class="flexrow-container">
+
+    <div
+        class="standard-theme theme-selector"
+        title="Standard Theme">
+    </div>
+
+    <div
+        class="light-theme theme-selector"
+        title="Light Theme">
+    </div>
+
+    <div
+        class="darker-theme theme-selector"
+        title="Darker Theme">
+    </div>
+
+</div>
+
+
+<!-- Title -->
+
+<div id="title-wrapper">
+
+    <h1 id="title">
+
+        <span id="title-text"></span>
+
+        <span id="title-cursor"></span>
+
+    </h1>
+
+</div>
+
+</div>
+
+<!-- =====================================================
+     PROJECT AND TASK DROPDOWNS
+====================================================== -->
+
+<div id="project-bar">
+
+
+<div class="project-wrapper">
+
+    <!-- PROJECT -->
+
+    <div class="project-control">
+
+       
+        <select
+            id="project-select"
+            class="standard-select">
+
+            <option value="">
+                Select Project
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- TASK -->
+
+    <div class="task-control">
+
+        
+        <select
+            id="task-select"
+            class="standard-select">
+
+            <option value="">
+                Select Task
+            </option>
+
+        </select>
+
+    </div>
+
+</div>
+
+
+</div>
+
+<!-- =====================================================
+     ADD TODO
+====================================================== -->
+
+
+<!-- =====================================================
+     DATE / TIME
+====================================================== -->
+
+<div>
+
+<p>
+    <span id="datetime"></span>
+</p>
+
+
+</div>
+
+<!-- =====================================================
+     TODO LIST
+====================================================== -->
+
+<div id="myUnOrdList">
+
+
+<ul class="todo-list"></ul>
+
+
+</div>
+
+
+
+<div id="form">
+
+<form id="todo-form">
+
+    <input
+        class="todo-input standard-input"
+        type="text"
+        placeholder="Add a todo..."
+        required
+        autocomplete="off"
+    >
+
+    <button
+        class="todo-btn standard-button"
+        type="submit">
+
+        I Got This!
+
+    </button>
+
+</form>
+
+</div>
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script
+    src="/todo/JS/main.js"
+    type="text/javascript">
+</script>
+
+</body>
+
+</html>
