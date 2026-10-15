@@ -2,7 +2,7 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "format:TSK-{DD}-{MM}-{YY}-{#}",
- "creation": "2025-08-13 00:13:34.042830",
+ "creation": "2026-10-14 17:59:23.108388",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
@@ -15,6 +15,7 @@
   "priority",
   "section_break_mjym",
   "description",
+  "to_do_table",
   "members",
   "created_by"
  ],
@@ -42,11 +43,12 @@
    "fieldtype": "Column Break"
   },
   {
+   "fetch_if_empty": 1,
    "fieldname": "project",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Project",
-   "options": "Projects"
+   "options": "My Projects"
   },
   {
    "fieldname": "to_date",
@@ -81,15 +83,21 @@
    "fieldtype": "Link",
    "label": "Created By",
    "options": "User"
+  },
+  {
+   "fieldname": "to_do_table",
+   "fieldtype": "Table",
+   "label": "To do Lists",
+   "options": "To Do Task"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-09-20 02:09:56.767926",
+ "modified": "2026-10-15 15:10:36.164123",
  "modified_by": "Administrator",
  "module": "Memento",
  "name": "Tasks",
- "naming_rule": "Expression",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {

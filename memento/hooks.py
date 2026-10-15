@@ -250,5 +250,17 @@ fixtures = [
         "filters": [
             ["name", "in", ["Tasks", "To Do Task"]]
         ]
+    },
+    {
+        "dt": "Workspace",
+        "filters": [
+            ["name", "=", "Memento"]
+        ]
+    },
+    {
+        "dt": "Custom HTML Block",
+        "filters": [
+            ["name", "=", "Welcome"]
+        ]
     }
 ]
