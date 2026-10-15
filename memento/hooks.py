@@ -260,7 +260,7 @@ fixtures = [
     {
         "dt": "Custom HTML Block",
         "filters": [
-            ["name", "=", "Welcome"]
+            ["name", "=", "Memento Welcome"]
         ]
     }
 ]
