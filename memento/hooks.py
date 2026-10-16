@@ -244,11 +244,23 @@ app_license = "mit"
 # }
 
 
-# fixtures = [
-#     {
-#         "dt": "DocType",
-#         "filters": [
-#             ["name", "in", ["Tasks", "To Do Task"]]
-#         ]
-#     }
-# ]
+fixtures = [
+    {
+        "dt": "DocType",
+        "filters": [
+            ["name", "in", ["Tasks", "To Do Task"]]
+        ]
+    },
+    {
+        "dt": "Workspace",
+        "filters": [
+            ["name", "=", "Memento"]
+        ]
+    },
+    {
+        "dt": "Custom HTML Block",
+        "filters": [
+            ["name", "=", "Memento Welcome"]
+        ]
+    }
+]
