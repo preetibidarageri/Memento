@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class ToDoTask(Document):
+class ToDoTable(Document):
 	pass

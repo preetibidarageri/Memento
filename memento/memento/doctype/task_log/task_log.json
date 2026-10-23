@@ -7,7 +7,9 @@
  "field_order": [
   "today",
   "task_id",
-  "members"
+  "members",
+  "today_todo_section",
+  "todo"
  ],
  "fields": [
   {
@@ -28,12 +30,23 @@
    "fieldtype": "Table MultiSelect",
    "label": "Members",
    "options": "Members Table"
+  },
+  {
+   "fieldname": "today_todo_section",
+   "fieldtype": "Section Break",
+   "label": "Today ToDo"
+  },
+  {
+   "fieldname": "todo",
+   "fieldtype": "Table",
+   "label": "ToDo",
+   "options": "ToDo Table"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-09-08 23:08:32.046400",
+ "modified": "2026-10-22 23:44:19.836081",
  "modified_by": "Administrator",
  "module": "Memento",
  "name": "Task Log",
