@@ -9,12 +9,27 @@ frappe.ui.form.on("My Projects", {
 	},
 
 	refresh(frm) {
-		const field = frm.get_field("description");
-		const field = frm.get_field("description");
-		$(field.wrapper).find(".ql-editor").css({
+		const description_field = frm.get_field("description");
+		$(description_field.wrapper).find(".ql-editor").css({
 			height: "1000px", // change as needed
 			"min-height": "600px",
 		});
-		field.editor && field.editor.resize(); // let Ace recalculate
+		description_field.field.editor && field.editor.resize(); // let Ace recalculate
+
+		// const about_field = frm.get_field("about");
+		// $(about_field.wrapper).find(".ql-editor").css({
+		// 	height: "1000px", // change as needed
+		// 	"min-height": "600px",
+		// });
+		// field.editor && field.editor.resize(); // let Ace recalculate
+
+		const about_field = frm.get_field("about");
+
+		$(about_field.wrapper).find("textarea").css({
+			height: "200px",
+			"min-height": "400px",
+		});
+
+		about_field.editor && field.editor.resize();
 	},
 });
