@@ -19,7 +19,9 @@
   "monograph_section",
   "about",
   "description",
-  "user"
+  "created_by",
+  "members",
+  "assigned_by"
  ],
  "fields": [
   {
@@ -77,12 +79,6 @@
    "label": "Description"
   },
   {
-   "fieldname": "user",
-   "fieldtype": "Link",
-   "label": "User",
-   "options": "User"
-  },
-  {
    "fieldname": "column_break_awse",
    "fieldtype": "Column Break"
   },
@@ -101,12 +97,30 @@
    "fieldname": "about",
    "fieldtype": "Small Text",
    "label": "About"
+  },
+  {
+   "fieldname": "created_by",
+   "fieldtype": "Link",
+   "label": "Created By",
+   "options": "User"
+  },
+  {
+   "fieldname": "members",
+   "fieldtype": "Table MultiSelect",
+   "label": "Members",
+   "options": "Members Table"
+  },
+  {
+   "fieldname": "assigned_by",
+   "fieldtype": "Link",
+   "label": "Assigned By",
+   "options": "User"
   }
  ],
  "icon": "fa branch",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-10-15 15:11:26.827380",
+ "modified": "2026-10-23 00:23:41.801234",
  "modified_by": "Administrator",
  "module": "Memento",
  "name": "My Projects",

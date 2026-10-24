@@ -1,19 +1,23 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2026-08-14 11:52:44.492629",
+ "creation": "2026-10-16 16:44:10.276369",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "task",
-  "status"
+  "status",
+  "user",
+  "time",
+  "end_time",
+  "total_duration"
  ],
  "fields": [
   {
    "fieldname": "task",
    "fieldtype": "Small Text",
    "in_list_view": 1,
-   "label": "Task",
+   "label": "Todo",
    "reqd": 1
   },
   {
@@ -24,16 +28,37 @@
    "label": "Status",
    "options": "Pending\nCompleted",
    "reqd": 1
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "User",
+   "options": "User"
+  },
+  {
+   "fieldname": "time",
+   "fieldtype": "Datetime",
+   "label": "Start Time"
+  },
+  {
+   "fieldname": "end_time",
+   "fieldtype": "Datetime",
+   "label": "End Time"
+  },
+  {
+   "fieldname": "total_duration",
+   "fieldtype": "Data",
+   "label": "Total Duration "
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2026-08-14 12:18:32.101101",
+ "modified": "2026-10-23 00:15:41.787700",
  "modified_by": "Administrator",
  "module": "Memento",
- "name": "To Do Task",
+ "name": "ToDo Table",
  "owner": "Administrator",
  "permissions": [],
  "row_format": "Dynamic",

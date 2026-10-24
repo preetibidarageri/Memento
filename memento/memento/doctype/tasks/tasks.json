@@ -1,8 +1,8 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:TSK-{DD}-{MM}-{YY}-{#}",
- "creation": "2026-10-14 17:59:23.108388",
+ "autoname": "format:TSK-{DD}-{MM}-{YYYY}-{#}",
+ "creation": "2026-10-16 16:44:10.180947",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
@@ -15,7 +15,7 @@
   "priority",
   "section_break_mjym",
   "description",
-  "to_do_table",
+  "task_todo",
   "members",
   "created_by"
  ],
@@ -47,6 +47,7 @@
    "fieldname": "project",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Project",
    "options": "My Projects"
   },
@@ -85,15 +86,15 @@
    "options": "User"
   },
   {
-   "fieldname": "to_do_table",
+   "fieldname": "task_todo",
    "fieldtype": "Table",
-   "label": "To do Lists",
-   "options": "To Do Task"
+   "label": "Task ToDo",
+   "options": "ToDo Table"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-10-15 15:10:36.164123",
+ "modified": "2026-10-22 23:39:13.790609",
  "modified_by": "Administrator",
  "module": "Memento",
  "name": "Tasks",

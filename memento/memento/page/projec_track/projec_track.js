@@ -360,111 +360,150 @@ class Projects {
                   <div class="post-content">
                       ${post.description.replace(/\n/g, "<br>")}
                   </div>
+                  <div class="task-post-footer">
+                      <button
+                          type="button"
+                          class="task-read-more"
+                          data-task-id="${post.name}"
+                          data-project-id="${post.project}"
+                      >
+                          Read More →
+                      </button>
+                  </div>
 
               </div>
             `,
-					)
-					.join("");
-			},
-		});
+          )
+          .join("");
+      },
+    });
+    // TASK READ MORE — OPEN TASK BLOG IN THE EXISTING BLOG PAGE
+$(document)
+    .off("click", ".task-read-more")
+    .on("click", ".task-read-more", function (event) {
 
-		// frappe.db
-		//   .get_list("Tasks", {
-		//     fields: ["*"],
-		//     filters: {
-		//       members: frappe.session.user,
-		//       project: project,
-		//     },
-		//     // order_by: 'employee_name asc',
-		//     limit: 10,
-		//   })
-		//   .then((t) => {
-		//     console.log(t);
-		//     self.posts = t;
-		//     if (t.length === 0) {
-		//       blogPosts.innerHTML = `
-		//                 <div class="empty-state">
-		//                     <h3>No Task yet</h3>
-		//                     <p>Start by creating your first task!</p>
-		//                 </div>
-		//             `;
-		//       return;
-		//     }
-		//     blogPosts.innerHTML = t
-		//       .map(
-		//         (post) => `
-		//             <div class="blog-post">
-		//                 <div class="post-header">
-		//                     <div class="author-avatar">${(post.avatar = "A")}</div>
-		//                     <div class="post-meta">
-		//                         <div class="author-name">${post.created_by}</div>
-		//                         <div class="post-date">${post.creation}</div>
-		//                     </div>
-		//                 </div>
-		//                 <h2 class="post-title">${post.task_name}</h2>
-		//                 <div class="post-content">${post.description.replace(/\n/g, "<br>")}</div>
-		//             </div>
-		//         `,
-		//       )
-		//       .join("");
-		//   });
+        // Prevent the task card click from opening Daily Timeline
+        event.preventDefault();
+        event.stopPropagation();
 
-		// blogPosts.innerHTML = this.posts
-		//   .map(
-		//     (post) =>
-		//       console.log("post-", post)`
-		//         <div class="blog-post">
-		//             <div class="post-header">
-		//                 <div class="author-avatar">${post.avatar}</div>
-		//                 <div class="post-meta">
-		//                     <div class="author-name">${post.author}</div>
-		//                     <div class="post-date">${post.date}</div>
-		//                 </div>
-		//             </div>
-		//             <h2 class="post-title">${post.title}</h2>
-		//             <div class="post-content">${post.content.replace(/\n/g, "<br>")}</div>
-		//         </div>
-		//     `,
-		//   )
-		//   .join("");
+        const taskId = $(this).attr("data-task-id");
+        const projectId = $(this).attr("data-project-id");
 
-		taskModelcss();
-		this.goBack();
-	}
+        console.log("TASK READ MORE CLICKED");
+        console.log("Task ID:", taskId);
+        console.log("Project ID:", projectId);
 
-	openProject() {
-		let self = this;
+        if (!taskId) {
+            console.error("Task ID is missing");
+            return;
+        }
 
-		// Opening the task post where those tasks are belongs to this project.
-		$(document)
-			.off("click", ".project-post")
-			.on("click", ".project-post", function (event) {
-				event.preventDefault();
-				event.stopPropagation();
+        // Open the existing blog-page with task information
+        frappe.set_route(
+            "blog-page",
+            taskId
+            
+        );
+    });
 
-				// Prevent the click event from propagating to the parent project-post div
-				// var project = $(".project-post").data("project-id");
+    // frappe.db
+    //   .get_list("Tasks", {
+    //     fields: ["*"],
+    //     filters: {
+    //       members: frappe.session.user,
+    //       project: project,
+    //     },
+    //     // order_by: 'employee_name asc',
+    //     limit: 10,
+    //   })
+    //   .then((t) => {
+    //     console.log(t);
+    //     self.posts = t;
+    //     if (t.length === 0) {
+    //       blogPosts.innerHTML = `
+    //                 <div class="empty-state">
+    //                     <h3>No Task yet</h3>
+    //                     <p>Start by creating your first task!</p>
+    //                 </div>
+    //             `;
+    //       return;
+    //     }
+    //     blogPosts.innerHTML = t
+    //       .map(
+    //         (post) => `
+    //             <div class="blog-post">
+    //                 <div class="post-header">
+    //                     <div class="author-avatar">${(post.avatar = "A")}</div>
+    //                     <div class="post-meta">
+    //                         <div class="author-name">${post.created_by}</div>
+    //                         <div class="post-date">${post.creation}</div>
+    //                     </div>
+    //                 </div>
+    //                 <h2 class="post-title">${post.task_name}</h2>
+    //                 <div class="post-content">${post.description.replace(/\n/g, "<br>")}</div>
+    //             </div>
+    //         `,
+    //       )
+    //       .join("");
+    //   });
 
-				let project = $(this).data("project-id");
+    // blogPosts.innerHTML = this.posts
+    //   .map(
+    //     (post) =>
+    //       console.log("post-", post)`
+    //         <div class="blog-post">
+    //             <div class="post-header">
+    //                 <div class="author-avatar">${post.avatar}</div>
+    //                 <div class="post-meta">
+    //                     <div class="author-name">${post.author}</div>
+    //                     <div class="post-date">${post.date}</div>
+    //                 </div>
+    //             </div>
+    //             <h2 class="post-title">${post.title}</h2>
+    //             <div class="post-content">${post.content.replace(/\n/g, "<br>")}</div>
+    //         </div>
+    //     `,
+    //   )
+    //   .join("");
 
-				self.project = project;
+    taskModelcss();
+    this.goBack();
+  }
 
-				let base_url = window.location.pathname;
+  openProject() {
+    let self = this;
 
-				console.log("base_url", base_url, "project :", project);
+    // Opening the task post where those tasks are belongs to this project.
+    $(document)
+      .off("click", ".project-post")
+      .on("click", ".project-post", function (event) {
+        event.preventDefault();
+        event.stopPropagation();
 
-				let newUrl = base_url.split("projec-track")[0] + "projec-track/" + project;
-				history.pushState({ project: project }, "", newUrl);
+        // Prevent the click event from propagating to the parent project-post div
+        // var project = $(".project-post").data("project-id");
 
-				// console.log("project", project);
-				// console.log("Task List opened of this project");
+        let project = $(this).data("project-id");
 
-				$(".container2").html("");
-				$(".container2").addClass("task-view"); //added
-				self.setViewBackground("task"); //added
-				$("#open-modal").remove();
+        self.project = project;
 
-				let container_content = `
+        let base_url = window.location.pathname
+
+        console.log("base_url", base_url, "project :", project);
+
+
+        let newUrl = base_url.split("projec-track")[0] + "projec-track/" + project; 
+        history.pushState({ project: project }, "", newUrl);
+
+        // console.log("project", project);
+        // console.log("Task List opened of this project");
+
+        $(".container2").html("");
+        $(".container2").addClass("task-view"); //added
+        self.setViewBackground("task"); //added
+        $("#open-modal").remove();
+
+        let container_content = `
           <div class="post-main-content">
 
               <div id="blogPosts">

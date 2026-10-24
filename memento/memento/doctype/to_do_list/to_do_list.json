@@ -22,14 +22,14 @@
    "fieldname": "tasks",
    "fieldtype": "Table",
    "label": "Tasks",
-   "options": "To Do Task",
+   "options": "ToDo Table",
    "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-09-07 12:19:29.809194",
+ "modified": "2026-10-22 23:38:23.621781",
  "modified_by": "Administrator",
  "module": "Memento",
  "name": "To Do List",
